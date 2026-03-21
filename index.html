@@ -1,149 +1,173 @@
-<!DOCTYPE html>  <html lang="en">    <head>    
-<meta charset="UTF-8">    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">    
-<title>Happy Birthday</title>  <style>    
-body {    
-  margin: 0;    
-  font-family: Arial, sans-serif;    
-  overflow-x: hidden;    
-  overflow-y: auto;    
-  background: linear-gradient(to top, #ff9a9e, #fad0c4);    
-}    /* pages */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(to top, #ff9a9e, #fad0c4);
+}
+
+/* pages */
 .page {
-display: none;
-min-height: 100vh;
-padding: 40px 20px;
-box-sizing: border-box;
-text-align: center;
-opacity: 0;
-transition: opacity 0.5s ease;
+  display: none;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .page.active {
-display: block;
-opacity: 1;
+  display: block;
+  opacity: 1;
 }
 
 /* text */
 h1 {
-color: white;
-font-size: 1.8em;
-margin-top: 10vh;
+  color: white;
+  font-size: 1.8em;
+  margin-top: 10vh;
 }
 
 p {
-color: white;
-font-size: 15px;
-line-height: 1.6;
-max-width: 500px;
-margin: 15px auto;
+  color: white;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 15px auto;
 }
 
 /* button */
 button {
-padding: 12px 25px;
-font-size: 16px;
-border: none;
-border-radius: 25px;
-background: #ff6f91;
-color: white;
-cursor: pointer;
-margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background: #ff6f91;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 /* balloons */
 .balloon {
-position: fixed;
-width: 50px;
-height: 70px;
-border-radius: 50%;
-animation: float 8s linear infinite;
-cursor: pointer;
+  position: fixed;
+  width: 50px;
+  height: 70px;
+  border-radius: 50%;
+  animation: float 8s linear infinite;
+  cursor: pointer;
 }
 
 @keyframes float {
-0% { transform: translateY(100vh); }
-100% { transform: translateY(-10vh); }
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-10vh); }
 }
 
 /* confetti */
 .confetti {
-position: fixed;
-width: 8px;
-height: 8px;
-animation: fall 3s linear forwards;
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  animation: fall 3s linear forwards;
 }
 
 @keyframes fall {
-0% { transform: translateY(-10vh) rotate(0deg); }
-100% { transform: translateY(100vh) rotate(360deg); }
+  0% { transform: translateY(-10vh) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
 }
-</style>  </head>  <body>  <!-- PAGE 1 -->  <div id="page1" class="page active">
+</style>
+</head>
+<body>
 
-  <h1>HAPPII BIRTHDAY BISHH 🥳🎉</h1>    
-  <p>click and stop acting annoying 😝</p>    
-  <button onclick="nextPage(2)">click ts 😝</button>    
-</div>  <!-- PAGE 2 -->  <div id="page2" class="page">    
-  <h1>OK LISTEN 😛</h1>    
-  <p>YAYAYYAYYYYYY! happii birthday gay bish im so happii to be here to wish u ur gay birthday 😝 shetif bish even if i heit u i wish uu the happiest birthday 🙄 and no matter how much u annoy me u still matter to me🥰🖕shetif i want u to be a carefree and happii femboii 🥰 and always remember im always here forr uu bishh and i hope urr day goes wonderful bishh i hope u're happii and yayayayy 😛 bishh i care abtt uu and i hope the day treats u better today 🥰🖕 my nggaa always be happii and gay 🥺 and i wish to be here with u in ur next birthday too🦭 shetif im happii that u were born 🙄🖕 have a successful and lovely life 😝 and remember shetif u can always come to me and share anything with me that upset u you can always open up to me and I'll be always there to comfort u and fart on u🥰🖕 and im happi that i found such a twinkle, keep growing and keep becoming more and more gay 🥰and plis atleast shower on ur birthday u stink too much🙏🙄</p>    
-  <button onclick="nextPage(3)">Next 😛</button>    
-</div>  <!-- PAGE 3 -->  <div id="page3" class="page">    
-  <h1>SOME REAL STUFF 😠</h1>    
-  <p>im happi u turned 17 but dont think u're leaving me 😠even if u go military I'll still be here for u 🦭i want u to grow but not disappear on me😠shataaaappp i luvv having a gay in my life and plis dont die in the military service🙏 aaaa stoopid get a life🙄 and omaiigah i forgor u're arabic i heit u🙄 AND OMGGOMGOGMGG IT'S ALSO UR EID YAYAYAYAYYYY HAPPII EID TOO YYAYAYAYAYYYY I HOPE URR DAY IS EVEN MOREEE LOVELYY 😝😝 WE LUVVV U TWINK!!🥳</h1>   yaaaaiii enjoii urr birthday and cut those toe nails 🙏🙄</p>    
-  <button onclick="nextPage(4)">dont pmo and click ts🙄</button>    
-</div>  <!-- PAGE 4 -->  <div id="page4" class="page">    
-  <h1>FINAL 😛</h1>    
-  <p>You matter more than you think.</p>    
-  <p>I’m glad you exist (even if you’re annoying).</p>    
-  <p>Stay happii, stay dumb and don’t disappear🙄</p>    
-  <p>HAPPIEST BIRTHDAY AND EIDDD!! 🥳🎉</p>    
-</div>  <script>    
-function nextPage(pageNum) {    
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));    
-  document.getElementById('page' + pageNum).classList.add('active');    
-  burstConfetti();    
-}    /* BALLOONS (tap to pop) */
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+  <h1>HAPPII BIRTHDAY BISHH 🥳🎉</h1>
+  <p>click and stop acting annoying 😝</p>
+  <button onclick="nextPage(2)">click ts 😝</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+  <h1>OK LISTEN 😛</h1>
+  <p>YAYAYYAYYYYYY! happii birthday gay bish im so happii to be here to wish u ur gay birthday 😝 shetif bish even if i heit u i wish uu the happiest birthday 🙄 and no matter how much u annoy me u still matter to me🥰🖕shetif i want u to be a carefree and happii femboii 🥰 and always remember im always here forr uu bishh and i hope urr day goes wonderful bishh i hope u're happii and yayayayy 😛 bishh i care abtt uu and i hope the day treats u better today 🥰🖕 my nggaa always be happii and gay 🥺 and i wish to be here with u in ur next birthday too🦭 shetif im happii that u were born 🙄🖕 have a successful and lovely life 😝 and remember shetif u can always come to me and share anything with me that upset u you can always open up to me and I'll be always there to comfort u and fart on u🥰🖕 and im happi that i found such a twinkle, keep growing and keep becoming more and more gay 🥰and plis atleast shower on ur birthday u stink too much🙏🙄</p>
+  <button onclick="nextPage(3)">Next 😛</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+  <h1>SOME REAL STUFF 😠</h1>
+  <p>im happi u turned 17 but dont think u're leaving me 😠 even if u go military I'll still be here for u 🦭 i want u to grow but not disappear on me😠 shataaaappp i luv having a gay in my life and plis dont die in the military service🙏 aaaa stoopid get a life🙄 and omaiigah i forgor u're arabic i heit u🙄 AND OMGGOMGOGMGG IT'S ALSO UR EID YAYAYAYAYYYY HAPPII EID TOO YYAYAYAYAYYYY I HOPE URR DAY IS EVEN MOREEE LOVELYY 😝😝 WE LUVVV U TWINK!!🥳</p>
+  <p>yaaaaiii enjoii urr birthday and cut those toe nails 🙏🙄</p>
+  <button onclick="nextPage(4)">dont pmo and click ts🙄</button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="page">
+  <h1>FINAL 😛</h1>
+  <p>You matter more than you think.</p>
+  <p>I’m glad you exist (even if you’re annoying).</p>
+  <p>Stay happii, stay dumb and don’t disappear🙄</p>
+  <p>HAPPIEST BIRTHDAY AND EIDDD!! 🥳🎉</p>
+</div>
+
+<script>
+function nextPage(pageNum) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + pageNum).classList.add('active');
+  burstConfetti();
+}
+
+/* BALLOONS (tap to pop) */
 function createBalloon() {
-const balloon = document.createElement('div');
-balloon.classList.add('balloon');
-balloon.style.left = Math.random() * 100 + 'vw';
-balloon.style.background = hsl(${Math.random()*360},70%,60%);
-balloon.style.animationDuration = (5 + Math.random()*5) + 's';
+  const balloon = document.createElement('div');
+  balloon.classList.add('balloon');
+  balloon.style.left = Math.random() * 100 + 'vw';
+  balloon.style.background = `hsl(${Math.random()*360},70%,60%)`;
+  balloon.style.animationDuration = (5 + Math.random()*5) + 's';
 
-balloon.onclick = () => {
-balloon.remove();
-burstConfetti();
-};
+  balloon.onclick = () => {
+    balloon.remove();
+    burstConfetti();
+  };
 
-document.body.appendChild(balloon);
-setTimeout(() => balloon.remove(), 10000);
+  document.body.appendChild(balloon);
+  setTimeout(() => balloon.remove(), 10000);
 }
 
 setInterval(createBalloon, 400);
 
 /* CONFETTI BURST */
 function burstConfetti() {
-for (let i = 0; i < 200; i++) {
-const c = document.createElement('div');
-c.classList.add('confetti');
-c.style.left = Math.random() * 100 + 'vw';
-c.style.background = hsl(${Math.random()*360},70%,60%);
-document.body.appendChild(c);
-setTimeout(() => c.remove(), 3000);
-}
+  for (let i = 0; i < 200; i++) {
+    const c = document.createElement('div');
+    c.classList.add('confetti');
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = `hsl(${Math.random()*360},70%,60%)`;
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3000);
+  }
 }
 
 /* CONTINUOUS CONFETTI RAIN */
 setInterval(() => {
-for (let i = 0; i < 20; i++) {
-const c = document.createElement('div');
-c.classList.add('confetti');
-c.style.left = Math.random() * 100 + 'vw';
-c.style.background = hsl(${Math.random()*360},70%,60%);
-document.body.appendChild(c);
-setTimeout(() => c.remove(), 3000);
-}
+  for (let i = 0; i < 20; i++) {
+    const c = document.createElement('div');
+    c.classList.add('confetti');
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = `hsl(${Math.random()*360},70%,60%)`;
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3000);
+  }
 }, 500);
-</script>  </body>
+</script>
 
+</body>
 </html>
