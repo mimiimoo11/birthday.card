@@ -54,16 +54,16 @@ button {
   color: white;
   cursor: pointer;
   margin-top: 20px;
+  z-index: 1000;
 }
 
 /* balloons */
 .balloon {
   position: fixed;
-  width: 50px;
-  height: 70px;
   border-radius: 50%;
-  animation: float 8s linear infinite;
+  animation: float linear infinite;
   cursor: pointer;
+  z-index: 500;
 }
 
 @keyframes float {
@@ -76,7 +76,8 @@ button {
   position: fixed;
   width: 8px;
   height: 8px;
-  animation: fall 3s linear forwards;
+  animation: fall linear forwards;
+  z-index: 400;
 }
 
 @keyframes fall {
@@ -104,7 +105,7 @@ button {
 <!-- PAGE 3 -->
 <div id="page3" class="page">
   <h1>SOME REAL STUFF 😠</h1>
-  <p>im happi u turned 17 but dont think u're leaving me 😠 even if u go military I'll still be here for u 🦭 i want u to grow but not disappear on me😠 shataaaappp i luv having a gay in my life and plis dont die in the military service🙏 aaaa stoopid get a life🙄 and omaiigah i forgor u're arabic i heit u🙄 AND OMGGOMGOGMGG IT'S ALSO UR EID YAYAYAYAYYYY HAPPII EID TOO YYAYAYAYAYYYY I HOPE URR DAY IS EVEN MOREEE LOVELYY 😝😝 WE LUVVV U TWINK!!🥳</p>
+  <p>im happi u turned 17 but dont think u're leaving me 😠even if u go military I'll still be here for u 🦭i want u to grow but not disappear on me😠shataaaappp i luv having a gay in my life and plis dont die in the military service🙏 aaaa stoopid get a life🙄 and omaiigah i forgor u're arabic i heit u🙄 AND OMGGOMGOGMGG IT'S ALSO UR EID YAYAYAYAYYYY HAPPII EID TOO YYAYAYAYAYYYY I HOPE URR DAY IS EVEN MOREEE LOVELYY 😝😝 WE LUVVV U TWINK!!🥳</p>
   <p>yaaaaiii enjoii urr birthday and cut those toe nails 🙏🙄</p>
   <button onclick="nextPage(4)">dont pmo and click ts🙄</button>
 </div>
@@ -119,55 +120,76 @@ button {
 </div>
 
 <script>
+// PAGE NAVIGATION
 function nextPage(pageNum) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page' + pageNum).classList.add('active');
-  burstConfetti();
+  burstConfetti(300);
 }
 
-/* BALLOONS (tap to pop) */
+// BALLOONS
 function createBalloon() {
   const balloon = document.createElement('div');
   balloon.classList.add('balloon');
   balloon.style.left = Math.random() * 100 + 'vw';
+  balloon.style.top = '100vh';
+  balloon.style.width = (30 + Math.random()*30) + 'px';
+  balloon.style.height = (40 + Math.random()*50) + 'px';
   balloon.style.background = `hsl(${Math.random()*360},70%,60%)`;
-  balloon.style.animationDuration = (5 + Math.random()*5) + 's';
+  balloon.style.animationDuration = (5 + Math.random()*10) + 's';
 
   balloon.onclick = () => {
     balloon.remove();
-    burstConfetti();
+    burstConfetti(30);
   };
 
   document.body.appendChild(balloon);
-  setTimeout(() => balloon.remove(), 10000);
+  setTimeout(() => balloon.remove(), 15000);
 }
 
-setInterval(createBalloon, 400);
-
-/* CONFETTI BURST */
-function burstConfetti() {
-  for (let i = 0; i < 200; i++) {
-    const c = document.createElement('div');
-    c.classList.add('confetti');
-    c.style.left = Math.random() * 100 + 'vw';
-    c.style.background = `hsl(${Math.random()*360},70%,60%)`;
-    document.body.appendChild(c);
-    setTimeout(() => c.remove(), 3000);
-  }
-}
-
-/* CONTINUOUS CONFETTI RAIN */
+// Continuous balloons
 setInterval(() => {
-  for (let i = 0; i < 20; i++) {
+  for(let i=0;i<5;i++){
+    createBalloon();
+  }
+}, 400);
+
+// CONFETTI
+function createConfetti() {
+  const c = document.createElement('div');
+  c.classList.add('confetti');
+  c.style.left = Math.random() * 100 + 'vw';
+  c.style.top = '-10px';
+  c.style.width = (5 + Math.random()*10) + 'px';
+  c.style.height = c.style.width;
+  c.style.background = `hsl(${Math.random()*360},70%,60%)`;
+  c.style.animationDuration = (3 + Math.random()*3) + 's';
+  document.body.appendChild(c);
+  setTimeout(() => c.remove(), 5000);
+}
+
+// Continuous confetti rain
+setInterval(() => {
+  for(let i=0;i<50;i++){
+    createConfetti();
+  }
+}, 200);
+
+// Burst confetti for page changes or clicks
+function burstConfetti(amount = 200) {
+  for (let i = 0; i < amount; i++) {
     const c = document.createElement('div');
     c.classList.add('confetti');
     c.style.left = Math.random() * 100 + 'vw';
+    c.style.top = Math.random() * 100 + 'vh';
+    c.style.width = (5 + Math.random()*10) + 'px';
+    c.style.height = c.style.width;
     c.style.background = `hsl(${Math.random()*360},70%,60%)`;
     document.body.appendChild(c);
-    setTimeout(() => c.remove(), 3000);
+    setTimeout(() => c.remove(), 4000);
   }
-}, 500);
+}
 </script>
 
 </body>
-</html>
+  </html>    
