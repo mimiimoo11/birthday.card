@@ -63,12 +63,12 @@ button {
   width: 50px;
   height: 70px;
   border-radius: 50%;
-  animation: float 8s linear infinite;
+  animation: float 6s linear infinite;
   cursor: pointer;
 }
 
 @keyframes float {
-  0% { transform: translateY(-10vh); }
+  0% { transform: translateY(-100px); }
   100% { transform: translateY(110vh); }
 }
 
@@ -78,11 +78,11 @@ button {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  animation: fall 4s linear infinite;
+  animation: fall 5s linear infinite;
 }
 
 @keyframes fall {
-  0% { transform: translateY(-10vh) rotate(0deg); opacity:1; }
+  0% { transform: translateY(-20px) rotate(0deg); opacity:1; }
   80% { opacity:1; }
   100% { transform: translateY(110vh) rotate(360deg); opacity:0; }
 }
@@ -99,9 +99,9 @@ button {
 /* Cake styling */
 .cake {
   position: relative;
-  width: 100px;
+  width: 120px;
   height: 80px;
-  margin: 30px auto 0;
+  margin: 40px auto 0;
 }
 .cake-layer {
   background: #ff6f91;
@@ -118,28 +118,28 @@ button {
 }
 .candle {
   position: absolute;
-  width: 6px;
+  width: 8px;
   height: 20px;
   background: #ffea00;
   top: -20px;
   border-radius: 2px;
-  left: 20px;
 }
-.candle:nth-child(2) { left: 40px; }
-.candle:nth-child(3) { left: 60px; }
+.candle:nth-child(1) { left: 25px; }
+.candle:nth-child(2) { left: 50px; }
+.candle:nth-child(3) { left: 75px; }
 .flame {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   background: orange;
   border-radius: 50%;
-  top: -6px;
+  top: -8px;
   left: 0;
   animation: flicker 0.5s infinite;
 }
 
 @keyframes flicker {
-  0%, 100% { transform: scale(1) translateY(0); opacity:1; }
+  0%,100% { transform: scale(1) translateY(0); opacity:1; }
   50% { transform: scale(1.3) translateY(-2px); opacity:0.7; }
 }
 
@@ -201,7 +201,6 @@ button {
   <p>I’m glad you exist (even if you’re annoying).</p>
   <p>Stay happii, stay dumb and don’t disappear🙄</p>
   <p>HAPPIEST BIRTHDAY AND EIDDD!! 🥳🎉</p>
-  <!-- Cake with HBD Sherif -->
   <div class="cake">
     <div class="cake-layer"></div>
     <div class="cake-layer"></div>
@@ -218,32 +217,32 @@ function nextPage(pageNum) {
   document.getElementById('page' + pageNum).classList.add('active');
 }
 
-/* BALLOONS (tap to pop) */
+/* BALLOONS AND CONFETTI - continuous from top on every page */
 function createBalloon() {
-  const balloon = document.createElement('div');
-  balloon.classList.add('balloon');
-  balloon.style.left = Math.random() * 100 + 'vw';
-  balloon.style.background = `hsl(${Math.random()*360},70%,60%)`;
-  balloon.style.animationDuration = (5 + Math.random()*5) + 's';
-  balloon.onclick = () => { balloon.remove(); burstConfetti(); };
-  document.body.appendChild(balloon);
-  setTimeout(() => balloon.remove(), 12000);
+  const b = document.createElement('div');
+  b.classList.add('balloon');
+  b.style.left = Math.random()*100+'vw';
+  b.style.background = `hsl(${Math.random()*360},70%,60%)`;
+  b.style.width = (40 + Math.random()*20)+'px';
+  b.style.height = (50 + Math.random()*20)+'px';
+  document.body.appendChild(b);
+  setTimeout(()=>b.remove(), 12000);
 }
-setInterval(createBalloon, 800);
+setInterval(createBalloon, 700);
 
-/* CONFETTI (moderate + sparkly) */
 function createConfetti() {
-  for (let i = 0; i < 15; i++) {
-    const c = document.createElement('div');
-    c.classList.add('confetti');
-    c.style.left = Math.random()*100 + 'vw';
-    c.style.background = `hsl(${Math.random()*360},70%,60%)`;
-    if (Math.random() < 0.3) c.classList.add('sparkle'); // sparkly ones
-    document.body.appendChild(c);
-    setTimeout(() => c.remove(), 4000);
-  }
+  const c = document.createElement('div');
+  c.classList.add('confetti');
+  c.style.left = Math.random()*100+'vw';
+  c.style.background = `hsl(${Math.random()*360},70%,60%)`;
+  if(Math.random()<0.3) c.classList.add('sparkle');
+  c.style.width = (5 + Math.random()*5)+'px';
+  c.style.height = (5 + Math.random()*5)+'px';
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(), 4000);
 }
-setInterval(createConfetti, 500);
+setInterval(createConfetti, 300);
 </script>
+
 </body>
 </html>
